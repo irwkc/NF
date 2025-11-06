@@ -1,5 +1,48 @@
 // Основной скрипт
 document.addEventListener('DOMContentLoaded', function() {
+    // Burger Menu Toggle
+    const burgerMenu = document.getElementById('burgerMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (burgerMenu && mobileMenu) {
+        burgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Закрытие меню при клике на пункт
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                burgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', function(e) {
+            if (!burgerMenu.contains(e.target) && !mobileMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
     // Фильтрация событий
     const filterButtons = document.querySelectorAll('.filter-btn');
     const eventItems = document.querySelectorAll('.event-item');
