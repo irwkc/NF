@@ -30,13 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const phoneInput = document.getElementById('phone');
     
     if (phoneInput) {
-        // Устанавливаем начальное значение +7
-        phoneInput.addEventListener('focus', function() {
-            if (!this.value) {
-                this.value = '+7 ';
-            }
-        });
-
+        // Обработчик ввода
         phoneInput.addEventListener('input', function(e) {
             let value = this.value.replace(/\D/g, '');
             
@@ -71,9 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         phoneInput.addEventListener('keydown', function(e) {
             // Запрещаем удаление +7
-            if ((e.key === 'Backspace' || e.key === 'Delete') && this.value === '+7 ') {
+            if ((e.key === 'Backspace' || e.key === 'Delete') && this.value.length <= 3) {
                 e.preventDefault();
+                this.value = '+7 ';
             }
+        });
+
+        // При клике ставим курсор в конец
+        phoneInput.addEventListener('click', function() {
+            this.setSelectionRange(this.value.length, this.value.length);
         });
     }
 
