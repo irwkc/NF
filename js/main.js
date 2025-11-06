@@ -26,12 +26,71 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Автоформатирование телефона
+    const phoneInput = document.getElementById('phone');
+    
+    if (phoneInput) {
+        // Устанавливаем начальное значение +7
+        phoneInput.addEventListener('focus', function() {
+            if (!this.value) {
+                this.value = '+7 ';
+            }
+        });
+
+        phoneInput.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            
+            // Если пользователь начинает с 8, заменяем на 7
+            if (value.startsWith('8')) {
+                value = '7' + value.slice(1);
+            }
+            
+            // Если начинается не с 7, добавляем 7
+            if (!value.startsWith('7')) {
+                value = '7' + value;
+            }
+            
+            // Форматируем номер
+            let formattedValue = '+7';
+            
+            if (value.length > 1) {
+                formattedValue += ' (' + value.substring(1, 4);
+            }
+            if (value.length >= 5) {
+                formattedValue += ') ' + value.substring(4, 7);
+            }
+            if (value.length >= 8) {
+                formattedValue += '-' + value.substring(7, 9);
+            }
+            if (value.length >= 10) {
+                formattedValue += '-' + value.substring(9, 11);
+            }
+            
+            this.value = formattedValue;
+        });
+
+        phoneInput.addEventListener('keydown', function(e) {
+            // Запрещаем удаление +7
+            if ((e.key === 'Backspace' || e.key === 'Delete') && this.value === '+7 ') {
+                e.preventDefault();
+            }
+        });
+    }
+
     // Обработка формы присоединения
     const joinForm = document.getElementById('joinForm');
     
     if (joinForm) {
         joinForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Проверяем, что телефон заполнен полностью
+            const phone = phoneInput.value.replace(/\D/g, '');
+            if (phone.length !== 11) {
+                alert('Пожалуйста, введите полный номер телефона');
+                return;
+            }
+            
             alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
             joinForm.reset();
         });
