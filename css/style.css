@@ -1466,14 +1466,40 @@ a {
 .form-group input,
 .form-group select,
 .form-group textarea {
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
     border: 2px solid var(--yellow);
     color: var(--white);
     padding: 1rem;
     font-family: 'Rajdhani', sans-serif;
     font-size: 1rem;
+    font-weight: 600;
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
     transition: all 0.3s ease;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: 
+        linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%),
+        linear-gradient(45deg, transparent 50%, var(--yellow) 50%),
+        linear-gradient(135deg, var(--yellow) 50%, transparent 50%);
+    background-position: 
+        left center,
+        calc(100% - 25px) calc(50% - 3px),
+        calc(100% - 20px) calc(50% - 3px);
+    background-size: 
+        100% 100%,
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 3rem;
+    cursor: pointer;
+}
+
+.form-group select::-ms-expand {
+    display: none;
 }
 
 .form-group input:focus,
@@ -1481,6 +1507,20 @@ a {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--yellow-bright);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background: linear-gradient(180deg, rgba(30, 30, 30, 0.95) 0%, rgba(10, 10, 10, 1) 100%);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group select option {
+    background: var(--black);
+    color: var(--white);
+    padding: 1rem;
+    font-weight: 600;
 }
 
 .form-submit {
