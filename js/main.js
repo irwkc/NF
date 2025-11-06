@@ -1,5 +1,44 @@
-// Плавная прокрутка
+// Основной скрипт
 document.addEventListener('DOMContentLoaded', function() {
+    // Фильтрация событий
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const eventItems = document.querySelectorAll('.event-item');
+    
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Убираем active у всех кнопок
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Добавляем active к нажатой кнопке
+                this.classList.add('active');
+                
+                // Фильтруем события
+                eventItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'grid';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
+    // Обработка формы присоединения
+    const joinForm = document.getElementById('joinForm');
+    
+    if (joinForm) {
+        joinForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+            joinForm.reset();
+        });
+    }
+    
+    // Плавная прокрутка
+
     // Плавная прокрутка для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

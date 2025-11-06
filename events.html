@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События - NF СПБГЭУ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Фоновые элементы -->
+    <div class="bg-elements">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← ГЛАВНАЯ</a>
+            <h1 class="page-title">СОБЫТИЯ</h1>
+            <p class="page-subtitle">Календарь мероприятий студенческой организации</p>
+        </div>
+    </section>
+
+    <!-- Events Filter -->
+    <section class="events-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">ВСЕ</button>
+                <button class="filter-btn" data-filter="education">ОБРАЗОВАНИЕ</button>
+                <button class="filter-btn" data-filter="culture">КУЛЬТУРА</button>
+                <button class="filter-btn" data-filter="sport">СПОРТ</button>
+                <button class="filter-btn" data-filter="social">СОЦИАЛЬНЫЕ</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="events-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-label">01</span>
+                ПРЕДСТОЯЩИЕ МЕРОПРИЯТИЯ
+            </h2>
+            <div class="events-list">
+                <div class="event-item" data-category="culture">
+                    <div class="event-date-badge">
+                        <span class="day">25</span>
+                        <span class="month">НОЯ</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-category">КУЛЬТУРА</span>
+                        <h3>Студенческий фестиваль талантов</h3>
+                        <p>Покажи свой талант! Пение, танцы, стендап, поэзия — всё что угодно. Лучшие выступления получат призы.</p>
+                        <div class="event-meta">
+                            <span>Актовый зал</span>
+                            <span>18:00</span>
+                            <span>Свободный вход</span>
+                        </div>
+                        <button class="btn-primary">
+                            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                            <div class="btn-corner tl"></div>
+                            <div class="btn-corner tr"></div>
+                            <div class="btn-corner bl"></div>
+                            <div class="btn-corner br"></div>
+                        </button>
+                    </div>
+                    <div class="event-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+
+                <div class="event-item" data-category="education">
+                    <div class="event-date-badge">
+                        <span class="day">30</span>
+                        <span class="month">НОЯ</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-category">ОБРАЗОВАНИЕ</span>
+                        <h3>Мастер-класс по финансовой грамотности</h3>
+                        <p>Узнай, как правильно управлять личными финансами, инвестировать и планировать бюджет от профессиональных финансовых консультантов.</p>
+                        <div class="event-meta">
+                            <span>Аудитория 305</span>
+                            <span>16:00</span>
+                            <span>До 50 человек</span>
+                        </div>
+                        <button class="btn-primary">
+                            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                            <div class="btn-corner tl"></div>
+                            <div class="btn-corner tr"></div>
+                            <div class="btn-corner bl"></div>
+                            <div class="btn-corner br"></div>
+                        </button>
+                    </div>
+                    <div class="event-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+
+                <div class="event-item" data-category="sport">
+                    <div class="event-date-badge">
+                        <span class="day">05</span>
+                        <span class="month">ДЕК</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-category">СПОРТ</span>
+                        <h3>Турнир по мини-футболу</h3>
+                        <p>Межфакультетский турнир по мини-футболу. Собери команду и покажи, на что способен твой факультет!</p>
+                        <div class="event-meta">
+                            <span>Спортзал</span>
+                            <span>14:00</span>
+                            <span>Командная регистрация</span>
+                        </div>
+                        <button class="btn-primary">
+                            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                            <div class="btn-corner tl"></div>
+                            <div class="btn-corner tr"></div>
+                            <div class="btn-corner bl"></div>
+                            <div class="btn-corner br"></div>
+                        </button>
+                    </div>
+                    <div class="event-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+
+                <div class="event-item" data-category="social">
+                    <div class="event-date-badge">
+                        <span class="day">10</span>
+                        <span class="month">ДЕК</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-category">СОЦИАЛЬНЫЕ</span>
+                        <h3>Благотворительная ярмарка</h3>
+                        <p>Новогодняя ярмарка hand-made товаров. Все средства пойдут на помощь детскому дому.</p>
+                        <div class="event-meta">
+                            <span>Холл 1 этажа</span>
+                            <span>12:00 - 18:00</span>
+                            <span>Свободный вход</span>
+                        </div>
+                        <button class="btn-primary">
+                            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                            <div class="btn-corner tl"></div>
+                            <div class="btn-corner tr"></div>
+                            <div class="btn-corner bl"></div>
+                            <div class="btn-corner br"></div>
+                        </button>
+                    </div>
+                    <div class="event-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+
+                <div class="event-item" data-category="education">
+                    <div class="event-date-badge">
+                        <span class="day">15</span>
+                        <span class="month">ДЕК</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-category">ОБРАЗОВАНИЕ</span>
+                        <h3>Карьерный форум</h3>
+                        <p>Встреча с представителями ведущих компаний. Узнай о вакансиях, стажировках и карьерных возможностях.</p>
+                        <div class="event-meta">
+                            <span>Конференц-зал</span>
+                            <span>10:00 - 16:00</span>
+                            <span>Свободный вход</span>
+                        </div>
+                        <button class="btn-primary">
+                            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                            <div class="btn-corner tl"></div>
+                            <div class="btn-corner tr"></div>
+                            <div class="btn-corner bl"></div>
+                            <div class="btn-corner br"></div>
+                        </button>
+                    </div>
+                    <div class="event-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events -->
+    <section class="past-events-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-label">02</span>
+                ПРОШЕДШИЕ СОБЫТИЯ
+            </h2>
+            <div class="past-events-grid">
+                <div class="past-event-card">
+                    <div class="past-event-date">15 ОКТ 2024</div>
+                    <h3>День первокурсника</h3>
+                    <p>Более 500 человек приняли участие в грандиозном празднике для новых студентов</p>
+                    <div class="card-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+                <div class="past-event-card">
+                    <div class="past-event-date">22 СЕН 2024</div>
+                    <h3>Бизнес-марафон</h3>
+                    <p>150 участников прошли интенсивный курс по развитию бизнес-навыков</p>
+                    <div class="card-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+                <div class="past-event-card">
+                    <div class="past-event-date">10 СЕН 2024</div>
+                    <h3>Волонтерская акция</h3>
+                    <p>80 волонтеров очистили территорию университета и прилегающий парк</p>
+                    <div class="card-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+                <div class="past-event-card">
+                    <div class="past-event-date">05 СЕН 2024</div>
+                    <h3>Посвящение в студенты</h3>
+                    <p>Торжественная церемония посвящения первокурсников в студенты СПБГЭУ</p>
+                    <div class="card-corners">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О НАС</h3>
+                    <p>Студенческая организация активистов СПБГЭУ</p>
+                </div>
+                <div class="footer-section">
+                    <h3>КОНТАКТЫ</h3>
+                    <p>Email: info@nf-spbgeu.ru</p>
+                    <p>Тел: +7 (812) 123-45-67</p>
+                </div>
+                <div class="footer-section">
+                    <h3>СОЦИАЛЬНЫЕ СЕТИ</h3>
+                    <div class="social-links">
+                        <a href="#">VK</a>
+                        <a href="#">TG</a>
+                        <a href="#">IG</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 NF СПБГЭУ</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
