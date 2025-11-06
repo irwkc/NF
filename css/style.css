@@ -517,12 +517,24 @@ a {
     transition: all 0.3s ease;
     cursor: pointer;
     z-index: 10;
+    border: none;
+    outline: none;
 }
 
 .btn-primary:hover,
 .btn-cta:hover {
     background: var(--yellow-bright);
     transform: translateY(-3px);
+}
+
+.btn-primary:focus,
+.btn-cta:focus {
+    outline: none;
+}
+
+.btn-primary:active,
+.btn-cta:active {
+    outline: none;
 }
 
 .btn-secondary {
